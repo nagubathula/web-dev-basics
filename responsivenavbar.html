@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Responsive Navbar with Tailwind CSS</title>
+    <!-- Include Tailwind CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+</head>
+
+<body class="bg-gray-100">
+    <!-- Navbar -->
+    <nav class="bg-blue-500 p-4">
+        <div class="container mx-auto flex justify-between items-center">
+            <!-- Logo -->
+            <a href="#" class="text-white text-2xl font-bold">My Website</a>
+
+            <!-- Mobile Menu Button (Hamburger Icon) -->
+            <div class="md:hidden">
+                <button id="mobile-menu-toggle" class="text-white">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor"
+                        class="bi bi-list" viewBox="0 0 16 16">
+                        <path fill-rule="evenodd"
+                            d="M11.5 2.5a.5.5 0 0 1 .5.5v10a.5.5 0 0 1-1 0v-10a.5.5 0 0 1 .5-.5zm-8-1a.5.5 0 0 0-.5.5v10a.5.5 0 0 0 1 0v-10a.5.5 0 0 0-.5-.5z" />
+                        <path fill-rule="evenodd"
+                            d="M1.5 2.5a.5.5 0 0 1 .5.5v10a.5.5 0 0 1-1 0v-10a.5.5 0 0 1 .5-.5z" />
+                        <path
+                            d="M6.293 7.293a1 1 0 0 1 1.414 0l2 2a1 1 0 0 1-1.414 1.414L7 8.414l-1.293 1.293a1 1 0 0 1-1.414-1.414l2-2a1 1 0 0 1 0-1.414z" />
+                    </svg>
+                </button>
+            </div>
+
+            <!-- Desktop Menu -->
+            <ul class="hidden md:flex space-x-4">
+                <li><a href="#" class="text-white hover:text-gray-300">Home</a></li>
+                <li><a href="#" class="text-white hover:text-gray-300">About</a></li>
+                <li><a href="#" class="text-white hover:text-gray-300">Services</a></li>
+                <li><a href="#" class="text-white hover:text-gray-300">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Mobile Menu (Hidden by Default) -->
+    <div id="mobile-menu" class="md:hidden bg-blue-500 text-white p-4 hidden">
+        <ul class="space-y-4">
+            <li><a href="#" class="hover:text-gray-300">Home</a></li>
+            <li><a href="#" class="hover:text-gray-300">About</a></li>
+            <li><a href="#" class="hover:text-gray-300">Services</a></li>
+            <li><a href="#" class="hover:text-gray-300">Contact</a></li>
+        </ul>
+    </div>
+
+    <!-- JavaScript to Toggle Mobile Menu -->
+    <script>
+        const mobileMenuToggle = document.getElementById('mobile-menu-toggle');
+        const mobileMenu = document.getElementById('mobile-menu');
+
+        mobileMenuToggle.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+    </script>
+</body>
+
+</html>
